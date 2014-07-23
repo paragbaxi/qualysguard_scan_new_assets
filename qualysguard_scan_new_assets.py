@@ -15,13 +15,10 @@ from lxml import objectify
 # Declare the command line flags/options we want to allow.
 parser = argparse.ArgumentParser(description = 'Parse QualysGuard VM map XML for live but not scannable IPs.')
 parser.add_argument('-a', '--asset_group',
-                    default = 'Discovered from map',
-                    help = 'FUTURE: Asset group to add IPs to.')
-parser.add_argument('-c', '--subscribe_from_csv',
-                    help = 'FUTURE: Add IPs to subscription.')
-parser.add_argument('-e', '--exclude',
-                    default = 'exclude.csv',
-                    help = 'FUTURE: IPs to exclude from adding to the subscription.')
+                    help = 'Asset group to add IPs to.')
+# parser.add_argument('-e', '--exclude',
+#                     default = 'exclude.csv',
+#                     help = 'FUTURE: IPs to exclude from adding to the subscription.')
 parser.add_argument('-f', '--file_ip_list',
                     default = '%s_live_not_scannable.csv' % (datetime.datetime.now().strftime('%Y-%m-%d.%H-%M-%S')),
                     help = 'CSV to output of live, not scannable IPs.')
